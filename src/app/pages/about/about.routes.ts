@@ -10,7 +10,8 @@ export const aboutRoutes: Route = {
   children: [
     {
       path: ROUTE_TOKENS.TEAM,
-      component: TeamComponent,
+      loadComponent: () =>
+        import('./team/team.component').then((p) => p.TeamComponent),
     },
     {
       path: ROUTE_TOKENS.COMPANY,
