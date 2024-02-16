@@ -6,7 +6,8 @@ import { CompanyComponent } from './company/company.component';
 
 export const aboutRoutes: Route = {
   path: ROUTE_TOKENS.ABOUT,
-  component: AboutComponent,
+  loadComponent: () =>
+    import('./about.component').then((a) => a.AboutComponent),
   children: [
     {
       path: ROUTE_TOKENS.TEAM,
